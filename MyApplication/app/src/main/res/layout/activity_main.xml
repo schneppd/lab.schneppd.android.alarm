@@ -11,18 +11,44 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
-    <Button
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/btnClockSetupPair"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Définir alarme"
-        android:id="@+id/btnClock"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timePicker"
         android:layout_marginTop="25dp"
-        android:onClick="ExecuteInputSetupClock"
+        android:orientation="vertical"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Définir alarme (seulement minutes)"
+            android:id="@+id/btnClockSetup"
+
+            android:onClick="ExecuteSetupClock"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Annule alarme"
+            android:id="@+id/btnClockCancel"
+            android:onClick="ExecuteCancelClock"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnClockSetupPair"
+
+        android:text="No alarm setup"
+        android:id="@+id/txtClockActivity"
         />
 
 
