@@ -5,11 +5,6 @@ import android.os.Bundle
 
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.View
-import android.content.Context
-import android.app.PendingIntent
-import android.content.Intent
-import java.util.*
-import android.content.SharedPreferences
 import lab.schneppd.myclockalarm.Model.AlarmTimePicked
 
 class MainActivity : AppCompatActivity() {
@@ -18,9 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        timePicker.setIs24HourView(true)
 
+        if(wasAlarmCreated(this))
+            RestoreAlarm()
     }
 
+    //used to create an alarm
     public fun ExecuteSetupClock(sender:View){
         val hh:Int = timePicker.hour
         val mm:Int = timePicker.minute
@@ -37,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //used to cancel a created alarm
     public fun ExecuteCancelClock(sender:View){
         CancelAlarm(this)
 
@@ -46,6 +46,14 @@ class MainActivity : AppCompatActivity() {
 
         txtClockActivity.text = "No alarm setup"
 
+    }
+
+    //restores created alarm's informations
+    private fun RestoreAlarm(){
+        RestoreAlarm(this)
+        val infos = GetCreatedAlarmDetails(this)
+        timePicker.hour = infos.hour
+        timePicker.minute = infos.minute
     }
 
 }
