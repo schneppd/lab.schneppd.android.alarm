@@ -20,14 +20,12 @@
             </intent-filter>
         </activity>
         <receiver android:name=".AlarmBroadcastReceiver"/>
-        <!-- needed to restoring alarm
-        <receiver android:name=".AlarmReceiver" android:enabled="false" android:exported="false" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+       <!-- needed to restore defined alarm at device reboot -->
+        <receiver android:name=".BootBroadcastReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".AlarmReceiver" android:process=":remote" />
-        -->
     </application>
 
 </manifest>

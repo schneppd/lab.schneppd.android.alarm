@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         btnClockSetup.visibility = View.GONE
         btnClockCancel.visibility = View.VISIBLE
 
-        txtClockActivity.text = "Clock setup to tic in {$hh}h {$mm}m"
+        txtClockActivity.text = "Alarm defined to trigger at {$hh}h:{$mm}m"
 
     }
 

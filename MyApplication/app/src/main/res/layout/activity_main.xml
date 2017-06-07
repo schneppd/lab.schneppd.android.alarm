@@ -25,7 +25,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Définir alarme (seulement minutes)"
+            android:text="Define an alarm"
             android:id="@+id/btnClockSetup"
 
             android:onClick="ExecuteSetupClock"
@@ -33,7 +33,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Annule alarme"
+            android:text="Cancel defined alarm"
             android:id="@+id/btnClockCancel"
             android:onClick="ExecuteCancelClock"
             android:visibility="gone"
@@ -47,7 +47,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnClockSetupPair"
 
-        android:text="No alarm setup"
+        android:text="No alarm defined"
         android:id="@+id/txtClockActivity"
         />
 

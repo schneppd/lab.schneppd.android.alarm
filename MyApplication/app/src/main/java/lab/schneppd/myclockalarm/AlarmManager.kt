@@ -49,6 +49,12 @@ public fun RestoreAlarm(context:Context){
     RegisterAlarm(context, timePicked)
 }
 
+//used to restore the alarm at the device boot time if the alarm was defined in SharedPreferences
+public fun RestoreAlarmIfNeeded(context:Context){
+    if(wasAlarmCreated(context))
+        RestoreAlarm(context)
+}
+
 //used to get back when the alarm was restored
 public fun GetCreatedAlarmDetails(context:Context) : AlarmTimePicked{
     val sp = PreferenceManager.getDefaultSharedPreferences(context)
